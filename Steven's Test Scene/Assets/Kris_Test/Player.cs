@@ -17,23 +17,30 @@ public class Player : MonoBehaviour {
 	void Update () {
 		horizontalVelocity = 0f;
 		verticalVelocity = 0f;
+
+		//Used to go left
 		if (Input.GetKey (KeyCode.D))
 		{
 			//GetComponent<Rigidbody2D>().velocity = new Vector2(moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
 			horizontalVelocity = moveSpeed;
 		}
 
+
+		//Used to go right
 		if (Input.GetKey (KeyCode.A)) 
 		{
 			//GetComponent<Rigidbody2D>().velocity = new Vector2(-moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
 			horizontalVelocity = -moveSpeed;
 		}
 
+
+		//Used to go up
 		if (Input.GetKey (KeyCode.W)) 
 		{
 			verticalVelocity = moveSpeed;
 		}
 
+		//Used to go down
 		if (Input.GetKey (KeyCode.S)) 
 		{
 			verticalVelocity = -moveSpeed;
