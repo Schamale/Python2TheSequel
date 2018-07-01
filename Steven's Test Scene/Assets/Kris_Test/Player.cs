@@ -61,8 +61,13 @@ public class Player : MonoBehaviour {
 
 	}
 
-	void OnTriggerEnter()
+	void OnTriggerEnter(Collider other)
 	{
 		SceneManager.LoadScene ("Captain Reilly", LoadSceneMode.Single);
+		if (other.gameObject.name == "EnemyBoat")
+		{
+			Debug.Log ("Battle Start!");
+		}
+
 	}
 }
