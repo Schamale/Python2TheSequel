@@ -67,7 +67,7 @@ public class Player : MonoBehaviour {
 		{
 			Debug.Log ("Battle Start!");
 		}
-
+	
 		SceneManager.LoadScene ("Captain Reilly", LoadSceneMode.Single);
 
 	}
