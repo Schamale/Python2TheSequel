@@ -506,6 +506,7 @@ GameObject:
   - component: {fileID: 792844057}
   - component: {fileID: 792844058}
   - component: {fileID: 792844059}
+  - component: {fileID: 792844060}
   m_Layer: 0
   m_Name: EnemyBoat
   m_TagString: Untagged
@@ -587,6 +588,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!58 &792844060
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 792844056}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 5
 --- !u!1 &1095865920
 GameObject:
   m_ObjectHideFlags: 0
