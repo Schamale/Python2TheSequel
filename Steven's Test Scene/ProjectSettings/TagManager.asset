@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Kris Button
   - Steven Button
+  - Controller
   layers:
   - Default
   - TransparentFX
