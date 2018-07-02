@@ -6,8 +6,11 @@ public class Cannon : MonoBehaviour {
 
 	public float cannonMove;
 	public float moveSpeed;
-	public GameObject cannonBall;
+	public Rigidbody2D cannonBall;
 	public Transform cannonSpawn;
+
+	public float launchForce = 15;
+	public bool fired;
 
 	// Use this for initialization
 	void Start () {
@@ -38,11 +41,17 @@ public class Cannon : MonoBehaviour {
 
 		if (Input.GetKeyDown ("space"))
 		{
-			Instantiate (cannonBall, cannonSpawn.position, cannonSpawn.rotation);
+			Rigidbody2D cannonBallInstance = Instantiate (cannonBall, cannonSpawn.position, cannonSpawn.rotation) as Rigidbody2D;
+			cannonBallInstance.velocity = launchForce * cannonSpawn.up;
+
+
 		}
 
 
 
 			GetComponent<Rigidbody2D> ().rotation -= cannonMove;
 	}
+
+
+
 }
