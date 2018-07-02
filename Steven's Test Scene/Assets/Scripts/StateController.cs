@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 public class StateController : MonoBehaviour {
 
+    public State currentState;
     public EnemyStats enemyStats;
     public Transform eyes;
 
@@ -32,5 +33,23 @@ public class StateController : MonoBehaviour {
         {
             navMeshAgent.enabled = false;
         }
+    }
+
+    void Update()
+    {
+        if (!aiActive)
+            return;
+        currentState.UpdateState(this);
+        
+    }
+
+    void OnDrawGizmos()
+    {
+        if (currentState != null && eyes != null)
+        {
+            Gizmos.color = currentState.sceneGizmoColor;
+            Gizmos.DrawWireSphere(eyes.position, enemyStats.lookSphereCastRadius);
+        }
+        
     }
 }

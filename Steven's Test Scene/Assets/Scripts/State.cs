@@ -7,6 +7,7 @@ using UnityEngine;
 public class State : ScriptableObject
 {
     public Action[] actions;
+    public Color sceneGizmoColor = Color.gray;
     public void UpdateState (StateController controller)
     {
         DoActions(controller);
