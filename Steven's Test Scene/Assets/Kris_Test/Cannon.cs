@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Cannon : MonoBehaviour {
 
@@ -8,13 +9,28 @@ public class Cannon : MonoBehaviour {
 	public float moveSpeed;
 	public Rigidbody2D cannonBall;
 	public Transform cannonSpawn;
+	public Slider aimSlider;
 
-	public float launchForce = 15;
-	public bool fired;
+	public float minLaunchForce = 15f;
+	public float maxLaunchForce = 30f;
+	public float maxChargeTime = 0.75f;
+
+
+	private float currentLaunchForce;
+	private float chargeSpeed;
+	private bool fired;
+
+	private void OnEnable()
+	{
+		currentLaunchForce = minLaunchForce;
+		aimSlider.value = minLaunchForce;
+
+	}
+
 
 	// Use this for initialization
 	void Start () {
-		
+		chargeSpeed = (maxLaunchForce - minLaunchForce) / maxChargeTime;
 	}
 	
 	// Update is called once per frame
@@ -39,10 +55,30 @@ public class Cannon : MonoBehaviour {
 			}
 		}
 
-		if (Input.GetKeyDown ("space"))
+		aimSlider.value = minLaunchForce;
+
+		if (currentLaunchForce > maxLaunchForce && !fired)
 		{
-			Rigidbody2D cannonBallInstance = Instantiate (cannonBall, cannonSpawn.position, cannonSpawn.rotation) as Rigidbody2D;
-			cannonBallInstance.velocity = launchForce * cannonSpawn.up;
+			currentLaunchForce = maxLaunchForce;
+			Fire ();
+		}
+
+		else if (Input.GetKeyDown ("space"))
+		{
+			fired = false;
+			currentLaunchForce = minLaunchForce;
+		}
+
+		else if (Input.GetKeyDown ("space") && !fired)
+		{
+			currentLaunchForce += chargeSpeed * Time.deltaTime;
+
+			aimSlider.value = currentLaunchForce;
+		}
+
+		else if (Input.GetKeyUp ("space") && !fired)
+		{
+			Fire ();
 
 
 		}
@@ -50,6 +86,14 @@ public class Cannon : MonoBehaviour {
 
 
 			GetComponent<Rigidbody2D> ().rotation -= cannonMove;
+	}
+
+	private void Fire()
+	{
+		Rigidbody2D cannonBallInstance = Instantiate (cannonBall, cannonSpawn.position, cannonSpawn.rotation) as Rigidbody2D;
+		cannonBallInstance.velocity = currentLaunchForce * cannonSpawn.up;
+
+		currentLaunchForce = minLaunchForce;
 	}
 
 
