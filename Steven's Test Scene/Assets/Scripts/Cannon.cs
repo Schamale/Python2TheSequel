@@ -69,7 +69,7 @@ public class Cannon : MonoBehaviour {
 			currentLaunchForce = minLaunchForce;
 		}
 
-		else if (Input.GetKeyDown ("space") && !fired)
+		else if (Input.GetKey ("space") && !fired)
 		{
 			currentLaunchForce += chargeSpeed * Time.deltaTime;
 
