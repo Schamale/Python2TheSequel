@@ -69,7 +69,7 @@ public class Cannon : MonoBehaviour {
 			currentLaunchForce = minLaunchForce;
 		}
 
-		else if (Input.GetKeyDown ("space") && !fired)
+		else if (Input.GetKey ("space") && !fired)
 		{
 			currentLaunchForce += chargeSpeed * Time.deltaTime;
 
@@ -90,6 +90,7 @@ public class Cannon : MonoBehaviour {
 
 	private void Fire()
 	{
+		fired = true;
 		Rigidbody2D cannonBallInstance = Instantiate (cannonBall, cannonSpawn.position, cannonSpawn.rotation) as Rigidbody2D;
 		cannonBallInstance.velocity = currentLaunchForce * cannonSpawn.up;
 
