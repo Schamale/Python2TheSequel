@@ -5,19 +5,21 @@ using UnityEngine.AI;
 
 public class StateController : MonoBehaviour {
 
+    #region Member Variables
     public State currentState;
     public EnemyStats enemyStats;
     public Transform eyes;
 
     [HideInInspector] public NavMeshAgent navMeshAgent;
-    [HideInInspector] public BoatShooting boatShooting;
+    //[HideInInspector] public BoatShooting boatShooting;
     [HideInInspector] public List<Transform> wayPointList;
+    [HideInInspector] public int nextWayPoint;
 
     public bool aiActive;
+    #endregion
 
-	void Awake ()
-    {
-        boatShooting = GetComponent<BoatShooting>();
+    void Awake ()
+    {       
         navMeshAgent = GetComponent<NavMeshAgent>();
 	}
 	
