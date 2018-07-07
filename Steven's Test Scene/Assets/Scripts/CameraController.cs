@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour {
 
-	public Player player;
+	public TestPlayer player;
 	public bool isFollowing = true;
 
 	public float xOffset;
 	public float yOffset;
 
 	void Start(){
-		player = FindObjectOfType<Player> ();
+		player = FindObjectOfType<TestPlayer> ();
 
 		isFollowing = true;
 
