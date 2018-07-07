@@ -10,7 +10,9 @@ public class Cannon : MonoBehaviour {
 	public Rigidbody2D cannonBall;
 	public Transform cannonSpawn;
 	public Slider aimSlider;
+	public GameObject loadInfo;
 
+	private bool loaded;
 	public float minLaunchForce = 15f;
 	public float maxLaunchForce = 30f;
 	public float maxChargeTime = 0.75f;
@@ -54,6 +56,12 @@ public class Cannon : MonoBehaviour {
 			}
 		}
 
+		if (Input.GetKey (KeyCode.LeftControl))
+		{
+			loaded = true;
+			loadInfo.SetActive (true);
+		}
+
 		aimSlider.value = minLaunchForce;
 
 		if (currentLaunchForce > maxLaunchForce && !fired)
@@ -68,14 +76,14 @@ public class Cannon : MonoBehaviour {
 			currentLaunchForce = minLaunchForce;
 		}
 
-		else if (Input.GetKey ("space") && !fired)
+		else if (Input.GetKey ("space") && !fired && loaded)
 		{
 			currentLaunchForce += chargeSpeed * Time.deltaTime;
 
 			aimSlider.value = currentLaunchForce;
 		}
 
-		else if (Input.GetKeyUp ("space") && !fired)
+		else if (Input.GetKeyUp ("space") && !fired && loaded)
 		{
 			Fire ();
 
@@ -89,6 +97,8 @@ public class Cannon : MonoBehaviour {
 
 	private void Fire()
 	{
+		loaded = false;
+		loadInfo.SetActive (false);
 		fired = true;
 		Rigidbody2D cannonBallInstance = Instantiate (cannonBall, cannonSpawn.position, cannonSpawn.rotation) as Rigidbody2D;
 		cannonBallInstance.velocity = currentLaunchForce * cannonSpawn.up;
