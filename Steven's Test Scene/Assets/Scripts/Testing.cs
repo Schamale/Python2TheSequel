@@ -19,8 +19,7 @@ public class Testing : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		var heading = player.position - transform.position;
-
-		float step = moveSpeed * Time.deltaTime;
+	
 		//transform.position = Vector3.MoveTowards (transform.position, wayPoint1.position, moveSpeed);
 		if (heading.sqrMagnitude < maxRange * maxRange)
 		{

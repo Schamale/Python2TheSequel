@@ -35,7 +35,6 @@ public class Cannon : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
 		cannonMove = 0f;
 		//Used to turn left
 		if (Input.GetKey (KeyCode.A)) 
