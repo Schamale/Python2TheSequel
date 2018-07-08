@@ -77,7 +77,7 @@ public class Player : MonoBehaviour {
 		}
 		*/
 
-		GetComponent<Rigidbody2D>().rotation = ShipPointingDirection ();
+		transform.up = GetComponent<Rigidbody2D> ().velocity;
 
 
 	}
