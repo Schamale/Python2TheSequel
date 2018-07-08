@@ -7,10 +7,14 @@ public class Testing : MonoBehaviour {
 	public Transform player;
 	public int currentPoint;
 	public Transform[] wayPoints;
+	public bool following = false;
+
+
+
+	private Transform target;
+	private float moveSpeed = .05f;
 	private float maxRange = 15f;
 
-	private float moveSpeed = .05f;
-	public bool following = false;
 	//private Rigidbody2D rb;
 	// Use this for initialization
 	void Start () {
@@ -51,8 +55,9 @@ public class Testing : MonoBehaviour {
 				currentPoint = 0;
 			}
 
-			transform.up = GetComponent<Rigidbody2D> ().velocity;
+
 		}
+			
 
 		
 	}
