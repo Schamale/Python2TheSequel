@@ -60,22 +60,6 @@ public class Player : MonoBehaviour {
 		GetComponent<Rigidbody2D> ().velocity = new Vector2 (horizontalVelocity, verticalVelocity);
 		//GetComponent<Rigidbody2D> ().velocity = new Vector2 (GetComponent<Rigidbody2D> ().velocity.x, moveVelocity);
 
-		//This flips the sprite depending on which direction you are going.
-		/*
-		if (GetComponent<Rigidbody2D> ().velocity.x > 0)
-		{
-			
-			transform.localScale = new Vector3 (5f, 5f, 1f);
-
-		}
-
-		else if (GetComponent<Rigidbody2D> ().velocity.x < 0)
-		{
-			
-			transform.localScale = new Vector3 (-5f, 5f, 1f);
-
-		}
-		*/
 
 		transform.up = GetComponent<Rigidbody2D> ().velocity;
 
@@ -93,32 +77,5 @@ public class Player : MonoBehaviour {
 
 	}
 
-	float ShipPointingDirection()
-	{
-		float rotation = 90f;
-		if (Input.GetKey (KeyCode.D))
-		{
-			rotation = -90f;
-		}
 
-		if (Input.GetKey (KeyCode.A))
-		{
-			rotation = 90f;
-		}
-
-		if (Input.GetKey (KeyCode.W))
-		{
-			rotation = 0f;
-		}
-
-		if (Input.GetKey (KeyCode.S))
-		{
-			rotation = 180f;
-		}
-
-
-
-		return rotation;
-
-	}
 }

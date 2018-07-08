@@ -50,6 +50,8 @@ public class Testing : MonoBehaviour {
 			{
 				currentPoint = 0;
 			}
+
+			transform.up = GetComponent<Rigidbody2D> ().velocity;
 		}
 
 		
