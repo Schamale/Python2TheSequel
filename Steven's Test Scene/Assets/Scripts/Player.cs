@@ -23,6 +23,7 @@ public class Player : MonoBehaviour {
 		//Used to go right
 		if (Input.GetKey (KeyCode.D))
 		{
+			GetComponent<Rigidbody2D> ().rotation = -90f;
 			//GetComponent<Rigidbody2D>().velocity = new Vector2(moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
 			horizontalVelocity = moveSpeed;
 		
@@ -32,6 +33,7 @@ public class Player : MonoBehaviour {
 		//Used to go left
 		if (Input.GetKey (KeyCode.A)) 
 		{
+			GetComponent<Rigidbody2D> ().rotation = 90f;
 			//GetComponent<Rigidbody2D>().velocity = new Vector2(-moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
 			horizontalVelocity = -moveSpeed;
 
@@ -41,6 +43,7 @@ public class Player : MonoBehaviour {
 		//Used to go up
 		if (Input.GetKey (KeyCode.W)) 
 		{
+			GetComponent<Rigidbody2D> ().rotation = 0f;
 			verticalVelocity = moveSpeed;
 
 		}
@@ -48,6 +51,7 @@ public class Player : MonoBehaviour {
 		//Used to go down
 		if (Input.GetKey (KeyCode.S)) 
 		{
+			GetComponent<Rigidbody2D> ().rotation = 180f;
 			verticalVelocity = -moveSpeed;
 
 		}
@@ -58,10 +62,18 @@ public class Player : MonoBehaviour {
 
 		//This flips the sprite depending on which direction you are going.
 		if (GetComponent<Rigidbody2D> ().velocity.x > 0)
+		{
+			
 			transform.localScale = new Vector3 (5f, 5f, 1f);
+
+		}
+
 		else if (GetComponent<Rigidbody2D> ().velocity.x < 0)
+		{
+			
 			transform.localScale = new Vector3 (-5f, 5f, 1f);
 
+		}
 
 
 	}
