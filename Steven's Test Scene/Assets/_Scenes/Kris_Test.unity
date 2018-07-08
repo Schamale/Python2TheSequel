@@ -364,44 +364,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
-    - target: {fileID: 4970215613023258, guid: a9de477fc9b532c4dbb073fb7394d5fd, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 212814943516196252, guid: a9de477fc9b532c4dbb073fb7394d5fd,
-        type: 2}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 5a7cb843f74af8845a94bb5cef0e2e0d,
-        type: 3}
-    - target: {fileID: 4970215613023258, guid: a9de477fc9b532c4dbb073fb7394d5fd, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4970215613023258, guid: a9de477fc9b532c4dbb073fb7394d5fd, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 58720917468081160, guid: a9de477fc9b532c4dbb073fb7394d5fd,
-        type: 2}
-      propertyPath: m_Radius
-      value: 1.12
-      objectReference: {fileID: 0}
-    - target: {fileID: 58444337994555990, guid: a9de477fc9b532c4dbb073fb7394d5fd,
-        type: 2}
-      propertyPath: m_Radius
-      value: 0.27
-      objectReference: {fileID: 0}
-    - target: {fileID: 58444337994555990, guid: a9de477fc9b532c4dbb073fb7394d5fd,
-        type: 2}
-      propertyPath: m_Offset.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 58444337994555990, guid: a9de477fc9b532c4dbb073fb7394d5fd,
-        type: 2}
-      propertyPath: m_Offset.y
-      value: -0.03
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a9de477fc9b532c4dbb073fb7394d5fd, type: 2}
   m_IsPrefabParent: 0
@@ -510,29 +472,6 @@ MonoBehaviour:
   isFollowing: 1
   xOffset: 0
   yOffset: 0
---- !u!1 &569069643 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1449351560940828, guid: bd7574ee55a8a1a478a132aee55e3134,
-    type: 2}
-  m_PrefabInternal: {fileID: 1021512386}
---- !u!114 &569069650
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 569069643}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdaa7c77f28ea2e4a8711b5711c3fe18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 1450373761}
-  currentPoint: 0
-  wayPoints:
-  - {fileID: 674261414}
-  - {fileID: 1796500774}
-  - {fileID: 957113144}
-  following: 0
 --- !u!1 &674261413
 GameObject:
   m_ObjectHideFlags: 0
@@ -696,34 +635,26 @@ Prefab:
       propertyPath: m_RootOrder
       value: 12
       objectReference: {fileID: 0}
-    - target: {fileID: 1449351560940828, guid: bd7574ee55a8a1a478a132aee55e3134, type: 2}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 50502838494905184, guid: bd7574ee55a8a1a478a132aee55e3134,
+    - target: {fileID: 114387069938003514, guid: bd7574ee55a8a1a478a132aee55e3134,
         type: 2}
-      propertyPath: m_Simulated
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 212658082339127266, guid: bd7574ee55a8a1a478a132aee55e3134,
-        type: 2}
-      propertyPath: m_Sprite
+      propertyPath: player
       value: 
-      objectReference: {fileID: 21300000, guid: a97e9fcd47b1b2c45880aeeb70d4749f,
-        type: 3}
-    - target: {fileID: 4446150032357854, guid: bd7574ee55a8a1a478a132aee55e3134, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4446150032357854, guid: bd7574ee55a8a1a478a132aee55e3134, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 58156074509411600, guid: bd7574ee55a8a1a478a132aee55e3134,
+      objectReference: {fileID: 1450373761}
+    - target: {fileID: 114387069938003514, guid: bd7574ee55a8a1a478a132aee55e3134,
         type: 2}
-      propertyPath: m_Radius
-      value: 1.72
-      objectReference: {fileID: 0}
+      propertyPath: wayPoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 674261414}
+    - target: {fileID: 114387069938003514, guid: bd7574ee55a8a1a478a132aee55e3134,
+        type: 2}
+      propertyPath: wayPoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 1796500774}
+    - target: {fileID: 114387069938003514, guid: bd7574ee55a8a1a478a132aee55e3134,
+        type: 2}
+      propertyPath: wayPoints.Array.data[2]
+      value: 
+      objectReference: {fileID: 957113144}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bd7574ee55a8a1a478a132aee55e3134, type: 2}
   m_IsPrefabParent: 0

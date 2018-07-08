@@ -58,7 +58,12 @@ public class Testing : MonoBehaviour {
 
 		}
 			
-
+		if (following)
+			target = player;
+		else
+			target = wayPoints [currentPoint];
+		transform.LookAt (target);
+		transform.rotation = new Quaternion (0, 0, transform.rotation.z, transform.rotation.w);
 		
 	}
 
