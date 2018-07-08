@@ -7,7 +7,7 @@ public class Testing : MonoBehaviour {
 	public Transform player;
 	public int currentPoint;
 	public Transform[] wayPoints;
-	private float maxRange = 50f;
+	private float maxRange = 15f;
 
 	private float moveSpeed = .05f;
 	public bool following = false;
