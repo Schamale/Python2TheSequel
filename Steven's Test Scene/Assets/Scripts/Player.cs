@@ -58,9 +58,9 @@ public class Player : MonoBehaviour {
 
 		//This flips the sprite depending on which direction you are going.
 		if (GetComponent<Rigidbody2D> ().velocity.x > 0)
-			transform.localScale = new Vector3 (1f, 1f, 1f);
+			transform.localScale = new Vector3 (5f, 5f, 1f);
 		else if (GetComponent<Rigidbody2D> ().velocity.x < 0)
-			transform.localScale = new Vector3 (-1f, 1f, 1f);
+			transform.localScale = new Vector3 (-5f, 5f, 1f);
 
 
 
