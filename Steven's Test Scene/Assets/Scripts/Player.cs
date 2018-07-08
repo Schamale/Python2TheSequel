@@ -23,7 +23,7 @@ public class Player : MonoBehaviour {
 		//Used to go right
 		if (Input.GetKey (KeyCode.D))
 		{
-			GetComponent<Rigidbody2D> ().rotation = -90f;
+			//GetComponent<Rigidbody2D> ().rotation = -90f;
 			//GetComponent<Rigidbody2D>().velocity = new Vector2(moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
 			horizontalVelocity = moveSpeed;
 		
@@ -33,7 +33,7 @@ public class Player : MonoBehaviour {
 		//Used to go left
 		if (Input.GetKey (KeyCode.A)) 
 		{
-			GetComponent<Rigidbody2D> ().rotation = 90f;
+			//GetComponent<Rigidbody2D> ().rotation = 90f;
 			//GetComponent<Rigidbody2D>().velocity = new Vector2(-moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
 			horizontalVelocity = -moveSpeed;
 
@@ -43,7 +43,7 @@ public class Player : MonoBehaviour {
 		//Used to go up
 		if (Input.GetKey (KeyCode.W)) 
 		{
-			GetComponent<Rigidbody2D> ().rotation = 0f;
+			//GetComponent<Rigidbody2D> ().rotation = 0f;
 			verticalVelocity = moveSpeed;
 
 		}
@@ -51,7 +51,7 @@ public class Player : MonoBehaviour {
 		//Used to go down
 		if (Input.GetKey (KeyCode.S)) 
 		{
-			GetComponent<Rigidbody2D> ().rotation = 180f;
+			//GetComponent<Rigidbody2D> ().rotation = 180f;
 			verticalVelocity = -moveSpeed;
 
 		}
@@ -61,6 +61,7 @@ public class Player : MonoBehaviour {
 		//GetComponent<Rigidbody2D> ().velocity = new Vector2 (GetComponent<Rigidbody2D> ().velocity.x, moveVelocity);
 
 		//This flips the sprite depending on which direction you are going.
+		/*
 		if (GetComponent<Rigidbody2D> ().velocity.x > 0)
 		{
 			
@@ -74,6 +75,9 @@ public class Player : MonoBehaviour {
 			transform.localScale = new Vector3 (-5f, 5f, 1f);
 
 		}
+		*/
+
+		GetComponent<Rigidbody2D>().rotation = ShipPointingDirection ();
 
 
 	}
@@ -86,6 +90,35 @@ public class Player : MonoBehaviour {
 		}
 	
 		SceneManager.LoadScene ("Fight", LoadSceneMode.Single);
+
+	}
+
+	float ShipPointingDirection()
+	{
+		float rotation = 90f;
+		if (Input.GetKey (KeyCode.D))
+		{
+			rotation = -90f;
+		}
+
+		if (Input.GetKey (KeyCode.A))
+		{
+			rotation = 90f;
+		}
+
+		if (Input.GetKey (KeyCode.W))
+		{
+			rotation = 0f;
+		}
+
+		if (Input.GetKey (KeyCode.S))
+		{
+			rotation = 180f;
+		}
+
+
+
+		return rotation;
 
 	}
 }
