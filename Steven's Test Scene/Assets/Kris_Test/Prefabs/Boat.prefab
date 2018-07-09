@@ -108,6 +108,7 @@ MonoBehaviour:
   moveSpeed: 5
   horizontalVelocity: 0
   verticalVelocity: 0
+  rgb: {fileID: 50770509490640250}
 --- !u!212 &212814943516196252
 SpriteRenderer:
   m_ObjectHideFlags: 1
