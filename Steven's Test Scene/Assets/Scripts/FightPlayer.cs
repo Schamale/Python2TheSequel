@@ -5,6 +5,7 @@ using UnityEngine;
 public class FightPlayer : MonoBehaviour {
 
 	public Cannon cannon;
+	public GameObject player;
 	public float horizontalVelocity;
 	public float verticalVelocity;
 	public float moveSpeed;
