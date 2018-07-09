@@ -11,6 +11,7 @@ public class Cannon : MonoBehaviour {
 	public Transform cannonSpawn;
 	public Slider aimSlider;
 	public GameObject loadInfo;
+	public bool cannonActive = false;
 
 	private bool loaded;
 	public float minLaunchForce = 15f;
@@ -21,7 +22,7 @@ public class Cannon : MonoBehaviour {
 	private float currentLaunchForce;
 	private float chargeSpeed;
 	private bool fired;
-	private bool cannonActive = true;
+
 
 	private void OnEnable()
 	{
@@ -38,6 +39,7 @@ public class Cannon : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		
 		cannonMove = 0f;
 		//Used to turn left
 		if (cannonActive)
@@ -92,11 +94,7 @@ public class Cannon : MonoBehaviour {
 			GetComponent<Rigidbody2D> ().rotation -= cannonMove;
 		}
 
-		if (!cannonActive)
-		{
 
-
-		}
 	}
 
 	private void Fire()
