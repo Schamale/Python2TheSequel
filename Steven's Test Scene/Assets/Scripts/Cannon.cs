@@ -21,6 +21,7 @@ public class Cannon : MonoBehaviour {
 	private float currentLaunchForce;
 	private float chargeSpeed;
 	private bool fired;
+	private bool cannonActive = true;
 
 	private void OnEnable()
 	{
@@ -39,60 +40,63 @@ public class Cannon : MonoBehaviour {
 	void Update () {
 		cannonMove = 0f;
 		//Used to turn left
-		if (Input.GetKey (KeyCode.A)) 
+		if (cannonActive)
 		{
-			if (GetComponent<Rigidbody2D> ().rotation < 45f)
+			if (Input.GetKey (KeyCode.A))
 			{
-				cannonMove = -moveSpeed;
+				if (GetComponent<Rigidbody2D> ().rotation < 45f)
+				{
+					cannonMove = -moveSpeed;
+				}
 			}
-		}
 
-		//Used to turn right
-		if (Input.GetKey (KeyCode.D))
-		{
-			if (GetComponent<Rigidbody2D> ().rotation > -45f)
+			//Used to turn right
+			if (Input.GetKey (KeyCode.D))
 			{
-				cannonMove = moveSpeed;
+				if (GetComponent<Rigidbody2D> ().rotation > -45f)
+				{
+					cannonMove = moveSpeed;
+				}
 			}
-		}
 
-		if (Input.GetKey (KeyCode.LeftControl))
-		{
-			loaded = true;
-			loadInfo.SetActive (true);
-		}
+			if (Input.GetKey (KeyCode.LeftControl))
+			{
+				loaded = true;
+				loadInfo.SetActive (true);
+			}
 
-		aimSlider.value = minLaunchForce;
+			aimSlider.value = minLaunchForce;
 
-		if (currentLaunchForce > maxLaunchForce && !fired)
-		{
-			currentLaunchForce = maxLaunchForce;
-			Fire ();
-		}
+			if (currentLaunchForce > maxLaunchForce && !fired)
+			{
+				currentLaunchForce = maxLaunchForce;
+				Fire ();
+			} else if (Input.GetKeyDown ("space"))
+			{
+				fired = false;
+				currentLaunchForce = minLaunchForce;
+			} else if (Input.GetKey ("space") && !fired && loaded)
+			{
+				currentLaunchForce += chargeSpeed * Time.deltaTime;
 
-		else if (Input.GetKeyDown ("space"))
-		{
-			fired = false;
-			currentLaunchForce = minLaunchForce;
-		}
-
-		else if (Input.GetKey ("space") && !fired && loaded)
-		{
-			currentLaunchForce += chargeSpeed * Time.deltaTime;
-
-			aimSlider.value = currentLaunchForce;
-		}
-
-		else if (Input.GetKeyUp ("space") && !fired && loaded)
-		{
-			Fire ();
+				aimSlider.value = currentLaunchForce;
+			} else if (Input.GetKeyUp ("space") && !fired && loaded)
+			{
+				Fire ();
 
 
-		}
+			}
 
 
 
 			GetComponent<Rigidbody2D> ().rotation -= cannonMove;
+		}
+
+		if (!cannonActive)
+		{
+
+
+		}
 	}
 
 	private void Fire()
