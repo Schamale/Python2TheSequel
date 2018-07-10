@@ -8,18 +8,19 @@ public class FightPlayer : MonoBehaviour {
 	public GameObject player;
 	public float horizontalVelocity;
 	public float verticalVelocity;
-	public float moveSpeed;
+	private float moveSpeed = 10f;
 
 	// Use this for initialization
 	void Start () {
-		
+		cannon = FindObjectOfType<Cannon> ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if (cannon.cannonActive == false)
 		{
-
+			verticalVelocity = 0f;
+			horizontalVelocity = 0f;
 			//Used to go right
 			if (Input.GetKey (KeyCode.D))
 			{
@@ -55,6 +56,7 @@ public class FightPlayer : MonoBehaviour {
 				verticalVelocity = -moveSpeed;
 
 			}
+			GetComponent<Rigidbody2D> ().velocity = new Vector2 (horizontalVelocity, verticalVelocity);
 		}
 	}
 }

@@ -665,6 +665,28 @@ Prefab:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4446150032357854, guid: bd7574ee55a8a1a478a132aee55e3134, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4446150032357854, guid: bd7574ee55a8a1a478a132aee55e3134, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114387069938003514, guid: bd7574ee55a8a1a478a132aee55e3134,
+        type: 2}
+      propertyPath: currentPoint
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114387069938003514, guid: bd7574ee55a8a1a478a132aee55e3134,
+        type: 2}
+      propertyPath: following
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4446150032357854, guid: bd7574ee55a8a1a478a132aee55e3134, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bd7574ee55a8a1a478a132aee55e3134, type: 2}
   m_IsPrefabParent: 0
