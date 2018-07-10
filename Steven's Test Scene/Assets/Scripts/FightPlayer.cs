@@ -9,6 +9,9 @@ public class FightPlayer : MonoBehaviour {
 	public GameObject player;
 	public float horizontalVelocity;
 	public float verticalVelocity;
+	public int cannonsInBarrel = 20;
+
+
 	private float moveSpeed = 10f;
 
 

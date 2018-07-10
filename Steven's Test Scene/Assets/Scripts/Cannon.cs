@@ -13,7 +13,7 @@ public class Cannon : MonoBehaviour {
 	public GameObject loadInfo;
 	public bool cannonActive = false;
 
-	private bool loaded;
+	public bool loaded = false;
 	public float minLaunchForce = 15f;
 	public float maxLaunchForce = 30f;
 	public float maxChargeTime = 0.75f;
@@ -61,11 +61,7 @@ public class Cannon : MonoBehaviour {
 				}
 			}
 
-			if (Input.GetKey (KeyCode.LeftControl))
-			{
-				loaded = true;
-				loadInfo.SetActive (true);
-			}
+
 
 			aimSlider.value = minLaunchForce;
 
@@ -93,6 +89,9 @@ public class Cannon : MonoBehaviour {
 
 			GetComponent<Rigidbody2D> ().rotation -= cannonMove;
 		}
+
+		if (loaded == true)
+			loadInfo.SetActive (true);
 
 
 	}

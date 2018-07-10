@@ -8,8 +8,14 @@ public class Interact : MonoBehaviour
 	public Button b;
 	public GameObject spaw;
 	public GameObject player;
+	public FightPlayer fightPlayer;
 
 	private bool go = false;
+
+	void Start()
+	{
+		fightPlayer = FindObjectOfType<FightPlayer> ();
+	}
 
 	void OnTriggerEnter2D ()
 	{
@@ -41,6 +47,7 @@ public class Interact : MonoBehaviour
 			go = false;
 
 			Debug.Log ("Interacted");
+			fightPlayer.cannonsInBarrel -= 1;
 		}
 	}
 }

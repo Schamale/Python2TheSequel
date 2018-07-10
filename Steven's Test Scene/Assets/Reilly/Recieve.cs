@@ -9,7 +9,14 @@ public class Recieve : MonoBehaviour
 
 	public GameObject player;
 
+	public Cannon cannon;
+
 	private bool go = false;
+
+	void Start()
+	{
+		cannon = FindObjectOfType<Cannon> ();
+	}
 
 	void OnTriggerEnter2D ()
 	{
@@ -38,6 +45,7 @@ public class Recieve : MonoBehaviour
 			b.interactable = false;
 
 			Debug.Log ("Interacted");
+			cannon.loaded = true;
 		}
 	}
 }
