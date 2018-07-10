@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FightPlayer : MonoBehaviour {
 
@@ -10,10 +11,13 @@ public class FightPlayer : MonoBehaviour {
 	public float verticalVelocity;
 	private float moveSpeed = 10f;
 
+
+
 	// Use this for initialization
 	void Start () {
 		cannon = FindObjectOfType<Cannon> ();
 	}
+		
 	
 	// Update is called once per frame
 	void Update () {
@@ -56,6 +60,8 @@ public class FightPlayer : MonoBehaviour {
 				verticalVelocity = -moveSpeed;
 
 			}
+				
+
 			GetComponent<Rigidbody2D> ().velocity = new Vector2 (horizontalVelocity, verticalVelocity);
 		}
 	}
