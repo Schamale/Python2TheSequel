@@ -12,6 +12,8 @@ public class Cannon : MonoBehaviour {
 	public Slider aimSlider;
 	public GameObject loadInfo;
 	public bool cannonActive = false;
+	public GameObject player;
+	public GameObject dot;
 
 	public bool loaded = false;
 	public float minLaunchForce = 15f;
@@ -102,6 +104,12 @@ public class Cannon : MonoBehaviour {
 		loaded = false;
 		loadInfo.SetActive (false);
 		fired = true;
+
+		player.transform.position = dot.transform.position;
+
+		player.SetActive (true);
+		dot.SetActive (false);
+
 
 		Rigidbody2D cannonBallInstance = Instantiate (cannonBall, cannonSpawn.position, cannonSpawn.rotation) as Rigidbody2D;
 
