@@ -48,7 +48,9 @@ public class Interact : MonoBehaviour
 
 			spawn.transform.SetParent (player.transform, false);
 
-			spawn.transform.position = new Vector3 (player.transform.position.x + 0.65f, player.transform.position.y + 0.65f, player.transform.position.z);
+			spawn.transform.position = new Vector3 (player.transform.position.x - .05f, player.transform.position.y + 1f, player.transform.position.z);
+
+			spawn.transform.rotation = Quaternion.Euler (0f, 0f, 0f);
 
 			b.interactable = false;
 

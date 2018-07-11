@@ -37,6 +37,14 @@ public class FightPlayer : MonoBehaviour {
 				//GetComponent<Rigidbody2D>().velocity = new Vector2(moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
 				horizontalVelocity = moveSpeed;
 
+				transform.up = GetComponent<Rigidbody2D> ().velocity;
+
+				if (Input.GetKeyDown (KeyCode.D)) 
+				{
+					transform.Rotate (0f, 0f, -90f);
+
+					GetComponent<Rigidbody2D> ().freezeRotation = true;
+				}
 			}
 
 
@@ -47,6 +55,14 @@ public class FightPlayer : MonoBehaviour {
 				//GetComponent<Rigidbody2D>().velocity = new Vector2(-moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
 				horizontalVelocity = -moveSpeed;
 
+				transform.up = GetComponent<Rigidbody2D> ().velocity;
+
+				if (Input.GetKeyDown (KeyCode.A)) 
+				{
+					transform.Rotate (0f, 0f, 90f);
+
+					GetComponent<Rigidbody2D> ().freezeRotation = true;
+				}
 			}
 
 
@@ -56,6 +72,14 @@ public class FightPlayer : MonoBehaviour {
 				//GetComponent<Rigidbody2D> ().rotation = 0f;
 				verticalVelocity = moveSpeed;
 
+				transform.up = GetComponent<Rigidbody2D> ().velocity;
+
+				if (Input.GetKeyDown (KeyCode.W)) 
+				{
+					transform.Rotate (0f, 0f, 0f);
+
+					GetComponent<Rigidbody2D> ().freezeRotation = true;
+				}
 			}
 
 			//Used to go down
@@ -64,15 +88,40 @@ public class FightPlayer : MonoBehaviour {
 				//GetComponent<Rigidbody2D> ().rotation = 180f;
 				verticalVelocity = -moveSpeed;
 
+				transform.up = GetComponent<Rigidbody2D> ().velocity;
+
+				if (Input.GetKeyDown (KeyCode.S)) 
+				{
+					transform.Rotate (0f, 0f, 180f);
+
+					GetComponent<Rigidbody2D> ().freezeRotation = true;
+				}
+
+
 			}
 				
 
 			GetComponent<Rigidbody2D> ().velocity = new Vector2 (horizontalVelocity, verticalVelocity);
+
+
+
+			if (Input.GetKey (KeyCode.None)) 
+			{
+				GetComponent<Rigidbody2D> ().freezeRotation = true;
+			}
 		}
 
 		if (LoadedInfo.activeInHierarchy == true) 
 		{
 			play.velocity = Vector3.zero;
+		}
+	}
+
+	void OnTriggerEnter()
+	{
+		if (transform.rotation.x != 0f && transform.rotation.y != 0f && transform.rotation.z != 0f) 
+		{
+			transform.rotation = Quaternion.Euler (0f, 0f, 0f);
 		}
 	}
 }

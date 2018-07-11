@@ -9,9 +9,9 @@ public class CannonBall : MonoBehaviour {
 
 
 	// Use this for initialization
-	void Start () {
+	void Start () 
+	{
 		cannon = FindObjectOfType<Cannon> ();
-
 	}
 	
 	// Update is called once per frame
@@ -19,5 +19,10 @@ public class CannonBall : MonoBehaviour {
 	{
 		if (transform.position.y >= 50f)
 			DestroyObject(this.gameObject);	
+
+		if (cannon.loadInfo.activeInHierarchy == true) 
+		{
+			Destroy(GetComponent<CircleCollider2D>());
+		}
 	}
 }

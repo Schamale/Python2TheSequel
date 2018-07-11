@@ -102,7 +102,13 @@ public class Cannon : MonoBehaviour {
 		loaded = false;
 		loadInfo.SetActive (false);
 		fired = true;
+
 		Rigidbody2D cannonBallInstance = Instantiate (cannonBall, cannonSpawn.position, cannonSpawn.rotation) as Rigidbody2D;
+
+		Destroy(cannonBallInstance.GetComponent<CircleCollider2D>());
+
+		cannonBallInstance.simulated = true;
+
 		cannonBallInstance.velocity = currentLaunchForce * cannonSpawn.up;
 
 		currentLaunchForce = minLaunchForce;
