@@ -14,6 +14,7 @@ public class Cannon : MonoBehaviour {
 	public bool cannonActive = false;
 	public GameObject player;
 	public GameObject dot;
+    AudioSource audioSource;
 
 	public bool loaded = false;
 	public float minLaunchForce = 15f;
@@ -37,6 +38,7 @@ public class Cannon : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		chargeSpeed = (maxLaunchForce - minLaunchForce) / maxChargeTime;
+        audioSource = GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -120,6 +122,8 @@ public class Cannon : MonoBehaviour {
 		cannonBallInstance.velocity = currentLaunchForce * cannonSpawn.up;
 
 		currentLaunchForce = minLaunchForce;
+
+        audioSource.Play();
 	}
 
 
