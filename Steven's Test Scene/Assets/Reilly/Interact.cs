@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class Interact : MonoBehaviour
 {
+
+	public Cannon cannon;
 	public Button b;
 	public GameObject spaw;
 	public GameObject player;
@@ -14,6 +16,7 @@ public class Interact : MonoBehaviour
 
 	void Start()
 	{
+		cannon = FindObjectOfType<Cannon> ();
 		fightPlayer = FindObjectOfType<FightPlayer> ();
 	}
 
@@ -32,6 +35,11 @@ public class Interact : MonoBehaviour
 		if (Input.GetKeyDown (KeyCode.E) && go == true) 
 		{
 			if (player.transform.childCount > 0) 
+			{
+				return;
+			}
+
+			if (cannon.loaded)
 			{
 				return;
 			}

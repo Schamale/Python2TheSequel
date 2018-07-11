@@ -61,6 +61,11 @@ public class Cannon : MonoBehaviour {
 				}
 			}
 
+			if (Input.GetKeyDown (KeyCode.E))
+			{
+				cannonActive = false;
+			}
+
 
 
 			aimSlider.value = minLaunchForce;
@@ -92,6 +97,8 @@ public class Cannon : MonoBehaviour {
 
 		if (loaded == true)
 			loadInfo.SetActive (true);
+		if (loaded == false)
+			cannonActive = false;
 
 
 	}

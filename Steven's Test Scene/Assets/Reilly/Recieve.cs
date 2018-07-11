@@ -46,6 +46,7 @@ public class Recieve : MonoBehaviour
 
 			Debug.Log ("Interacted");
 			cannon.loaded = true;
+			cannon.cannonActive = true;
 		}
 	}
 }
