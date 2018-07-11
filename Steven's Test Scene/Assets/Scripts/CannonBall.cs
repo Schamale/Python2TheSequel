@@ -11,12 +11,13 @@ public class CannonBall : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		cannon = FindObjectOfType<Cannon> ();
-		if (cannon.cannonActive)
-			Destroy (gameObject, maxLifeTime);
+
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		
+	void Update () 
+	{
+		if (transform.position.y >= 50f)
+			DestroyObject(this.gameObject);	
 	}
 }

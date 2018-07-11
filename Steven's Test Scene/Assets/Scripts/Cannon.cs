@@ -90,8 +90,6 @@ public class Cannon : MonoBehaviour {
 
 			}
 
-
-
 			GetComponent<Rigidbody2D> ().rotation -= cannonMove;
 		}
 
@@ -99,8 +97,6 @@ public class Cannon : MonoBehaviour {
 			loadInfo.SetActive (true);
 		if (loaded == false)
 			cannonActive = false;
-
-
 	}
 
 	private void Fire()

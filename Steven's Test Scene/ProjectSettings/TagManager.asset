@@ -8,6 +8,7 @@ TagManager:
   - Steven Button
   - Controller
   - Button
+  - CannonBall
   layers:
   - Default
   - TransparentFX
