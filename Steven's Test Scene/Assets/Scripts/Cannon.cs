@@ -12,6 +12,9 @@ public class Cannon : MonoBehaviour {
 	public Slider aimSlider;
 	public GameObject loadInfo;
 	public bool cannonActive = false;
+	public GameObject player;
+	public GameObject dot;
+    AudioSource audioSource;
 
 	public bool loaded = false;
 	public float minLaunchForce = 15f;
@@ -35,6 +38,7 @@ public class Cannon : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		chargeSpeed = (maxLaunchForce - minLaunchForce) / maxChargeTime;
+        audioSource = GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -103,6 +107,12 @@ public class Cannon : MonoBehaviour {
 		loadInfo.SetActive (false);
 		fired = true;
 
+		player.transform.position = dot.transform.position;
+
+		player.SetActive (true);
+		dot.SetActive (false);
+
+
 		Rigidbody2D cannonBallInstance = Instantiate (cannonBall, cannonSpawn.position, cannonSpawn.rotation) as Rigidbody2D;
 
 		Destroy(cannonBallInstance.GetComponent<CircleCollider2D>());
@@ -112,6 +122,8 @@ public class Cannon : MonoBehaviour {
 		cannonBallInstance.velocity = currentLaunchForce * cannonSpawn.up;
 
 		currentLaunchForce = minLaunchForce;
+
+        audioSource.Play();
 	}
 
 

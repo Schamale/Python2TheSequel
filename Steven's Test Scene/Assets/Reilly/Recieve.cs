@@ -13,6 +13,8 @@ public class Recieve : MonoBehaviour
 
 	private bool go = false;
 
+	public GameObject dot;
+
 	void Start()
 	{
 		cannon = FindObjectOfType<Cannon> ();
@@ -47,6 +49,10 @@ public class Recieve : MonoBehaviour
 			Debug.Log ("Interacted");
 			cannon.loaded = true;
 			cannon.cannonActive = true;
+
+			dot.SetActive(true);
+
+			player.SetActive(false);
 		}
 	}
 }
