@@ -86,8 +86,6 @@ public class Cannon : MonoBehaviour {
 			} else if (Input.GetKeyUp ("space") && !fired && loaded)
 			{
 				Fire ();
-
-
 			}
 
 			GetComponent<Rigidbody2D> ().rotation -= cannonMove;

@@ -7,9 +7,11 @@ public class FightPlayer : MonoBehaviour {
 
 	public Cannon cannon;
 	public GameObject player;
+	public Rigidbody2D play;
 	public float horizontalVelocity;
 	public float verticalVelocity;
 	public int cannonsInBarrel = 20;
+	public GameObject LoadedInfo;
 
 
 	private float moveSpeed = 10f;
@@ -66,6 +68,11 @@ public class FightPlayer : MonoBehaviour {
 				
 
 			GetComponent<Rigidbody2D> ().velocity = new Vector2 (horizontalVelocity, verticalVelocity);
+		}
+
+		if (LoadedInfo.activeInHierarchy == true) 
+		{
+			play.velocity = Vector3.zero;
 		}
 	}
 }

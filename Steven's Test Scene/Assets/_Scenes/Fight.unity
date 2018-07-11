@@ -776,7 +776,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.45, y: 0.18}
+  m_Size: {x: 1.583, y: 0.18}
   m_EdgeRadius: 0
 --- !u!61 &389014871
 BoxCollider2D:
@@ -801,7 +801,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.6, y: 0.18}
+  m_Size: {x: 1.69, y: 0.18}
   m_EdgeRadius: 0
 --- !u!1 &437983385
 GameObject:
@@ -917,9 +917,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cannon: {fileID: 0}
   player: {fileID: 979151705}
+  play: {fileID: 979151709}
   horizontalVelocity: 0
   verticalVelocity: 0
   cannonsInBarrel: 20
+  LoadedInfo: {fileID: 278190684}
 --- !u!50 &979151709
 Rigidbody2D:
   serializedVersion: 4
@@ -1293,6 +1295,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 128eb64902228e240bc672127b5e53a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cannon: {fileID: 0}
   b: {fileID: 304117383}
   spaw: {fileID: 1633794529664458, guid: 44c974ef3cc73c84f9004c487d42713f, type: 2}
   player: {fileID: 979151705}
