@@ -11,6 +11,7 @@ public class Interact : MonoBehaviour
 	public GameObject spaw;
 	public GameObject player;
 	public FightPlayer fightPlayer;
+    AudioSource audioSource;
 
 	private bool go = false;
 
@@ -18,6 +19,7 @@ public class Interact : MonoBehaviour
 	{
 		cannon = FindObjectOfType<Cannon> ();
 		fightPlayer = FindObjectOfType<FightPlayer> ();
+        audioSource = GetComponent<AudioSource>();
 	}
 
 	void OnTriggerEnter2D ()
@@ -62,7 +64,8 @@ public class Interact : MonoBehaviour
 
 				Debug.Log ("Interacted");
 				fightPlayer.cannonsInBarrel -= 1;
-			}
+                audioSource.Play();
+            }
 			}
 	}
 }
