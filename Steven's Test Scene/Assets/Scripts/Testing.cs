@@ -64,6 +64,10 @@ public class Testing : MonoBehaviour {
 			target = wayPoints [currentPoint];
 		transform.LookAt (target);
 		transform.rotation = new Quaternion (0f, 0f, transform.rotation.z, transform.rotation.w);
+		transform.Rotate (0f, 0f, 90f);
+		if(currentPoint == 0)
+			transform.Rotate (0f, 0f, 180f);
+		
 
 
 		
