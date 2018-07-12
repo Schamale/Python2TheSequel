@@ -8,9 +8,14 @@ public class Player : MonoBehaviour {
 	public float moveSpeed;
 	public float horizontalVelocity;
 	public float verticalVelocity;
+    private Rigidbody2D rb;
 
-	// Use this for initialization
-	void Start () 
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
+    // Use this for initialization
+    void Start () 
 	{
 	}
 	
@@ -28,13 +33,13 @@ public class Player : MonoBehaviour {
 			//GetComponent<Rigidbody2D>().velocity = new Vector2(moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
 			horizontalVelocity = moveSpeed;
 
-			transform.up = GetComponent<Rigidbody2D> ().velocity;
+			transform.up = rb.velocity;
 
 			if (Input.GetKeyDown (KeyCode.D)) 
 			{
 				transform.Rotate (0f, 0f, -90f);
 
-				GetComponent<Rigidbody2D> ().freezeRotation = true;
+				rb.freezeRotation = true;
 			}
 		}
 
@@ -46,13 +51,13 @@ public class Player : MonoBehaviour {
 			//GetComponent<Rigidbody2D>().velocity = new Vector2(-moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
 			horizontalVelocity = -moveSpeed;
 
-			transform.up = GetComponent<Rigidbody2D> ().velocity;
+			transform.up = rb.velocity;
 
 			if (Input.GetKeyDown (KeyCode.A)) 
 			{
 				transform.Rotate (0f, 0f, 90f);
 
-				GetComponent<Rigidbody2D> ().freezeRotation = true;
+				rb.freezeRotation = true;
 			}
 		}
 
@@ -63,13 +68,13 @@ public class Player : MonoBehaviour {
 			//GetComponent<Rigidbody2D> ().rotation = 0f;
 			verticalVelocity = moveSpeed;
 
-			transform.up = GetComponent<Rigidbody2D> ().velocity;
+			transform.up = rb.velocity;
 
 			if (Input.GetKeyDown (KeyCode.W)) 
 			{
 				transform.Rotate (0f, 0f, 0f);
 
-				GetComponent<Rigidbody2D> ().freezeRotation = true;
+				rb.freezeRotation = true;
 			}
 		}
 
@@ -79,20 +84,20 @@ public class Player : MonoBehaviour {
 			//GetComponent<Rigidbody2D> ().rotation = 180f;
 			verticalVelocity = -moveSpeed;
 
-			transform.up = GetComponent<Rigidbody2D> ().velocity;
+			transform.up = rb.velocity;
 
 			if (Input.GetKeyDown (KeyCode.S)) 
 			{
 				transform.Rotate (0f, 0f, 180f);
 
-				GetComponent<Rigidbody2D> ().freezeRotation = true;
+				rb.freezeRotation = true;
 			}
 		}
 			
-		GetComponent<Rigidbody2D> ().velocity = new Vector2 (horizontalVelocity, verticalVelocity);
+		rb.velocity = new Vector2 (horizontalVelocity, verticalVelocity);
 		//GetComponent<Rigidbody2D> ().velocity = new Vector2 (GetComponent<Rigidbody2D> ().velocity.x, moveVelocity);
 
-		GetComponent<Rigidbody2D> ().freezeRotation = false;
+		rb.freezeRotation = false;
 
 	}
 

@@ -1,13 +1,16 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class BoatManager : MonoBehaviour {
+[Serializable]
+public class BoatManager
+{ 
 
     public Color PlayerColor;                               // This is the color this boat will be tinted.
     public Transform SpawnPoint;                            // The position and direction the boat will have when it spawns.
-    [HideInInspector] public GameObject m_Instance;         // A reference to the of the boat when it is created.
+    [HideInInspector] public GameObject m_Instance;         // A reference to the instance of the boat when it is created.
     [HideInInspector] public List<Transform> m_WayPointList;// List of waypoint's for Boats to patrol.
     [HideInInspector] public int PlayerNumber;              // This specifies which player this is
 

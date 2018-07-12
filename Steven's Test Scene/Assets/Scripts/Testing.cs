@@ -8,6 +8,8 @@ public class Testing : MonoBehaviour {
 	public int currentPoint;
 	public Transform[] wayPoints;
 	public bool following = false;
+    public GameObject[] boatPrefabs;
+    public BoatManager[] b;
 
 
 
@@ -25,6 +27,7 @@ public class Testing : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		var heading = player.position - transform.position;
+        
 		if (transform.position == wayPoints [currentPoint].position)
 		{
 			currentPoint++;
