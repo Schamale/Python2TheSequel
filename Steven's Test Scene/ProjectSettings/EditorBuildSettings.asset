@@ -5,13 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Scenes/Captain Reilly.unity
     guid: 67b8856e94ad99649a524c80e978ae4a
   - enabled: 1
     path: Assets/_Scenes/Kris_Test.unity
     guid: 8b4986f2ba5552840a75d0a96f08ee42
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Scenes/Main.unity
     guid: 8babd0c12c3dd5541a4d85325bd24349
   - enabled: 1
