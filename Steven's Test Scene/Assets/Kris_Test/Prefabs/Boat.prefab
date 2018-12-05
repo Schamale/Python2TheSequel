@@ -21,9 +21,8 @@ GameObject:
   - component: {fileID: 4970215613023258}
   - component: {fileID: 212814943516196252}
   - component: {fileID: 50770509490640250}
-  - component: {fileID: 58720917468081160}
   - component: {fileID: 58444337994555990}
-  - component: {fileID: 114181836928411048}
+  - component: {fileID: 114919323222687114}
   m_Layer: 0
   m_Name: Boat
   m_TagString: Untagged
@@ -79,22 +78,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -0.03}
   serializedVersion: 2
   m_Radius: 0.27
---- !u!58 &58720917468081160
-CircleCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1472878428133006}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 1.12
---- !u!114 &114181836928411048
+--- !u!114 &114919323222687114
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -102,13 +86,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1472878428133006}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f63c53df13cadb54d9dbf10ff89bd4a5, type: 3}
+  m_Script: {fileID: 11500000, guid: 5ff83f54e27b2034fb90a8512891d6a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
-  horizontalVelocity: 0
-  verticalVelocity: 0
-  rgb: {fileID: 50770509490640250}
+  manager: {fileID: 0}
+  location: {x: 0, y: 0}
+  velocity: {x: 0, y: 0}
 --- !u!212 &212814943516196252
 SpriteRenderer:
   m_ObjectHideFlags: 1
